@@ -1,0 +1,91 @@
+1) Пифагоровы тройки
+fun pif(a, b, c)
+    "YES" if a^2 + b^2 = c^2 else "NO"
+a, b, c = readint, readint, readint
+puts(pif(a, b, c))
+
+2) Число Фибоначчи
+fun fib(n)
+    1 if n <= 1 else fib(n - 1) + fib(n - 2)
+print(fib(readint))
+
+3) Максимальная степень двойки не превосходящая число
+fun maxTwoPower(n) begin
+    res = 0
+    while 2 ^ (res + 1) <= n do
+        res = res + 1
+    end
+    res
+end
+print(maxTwoPower(readint))
+
+4) A+B из примера к лабораторной
+a, b = readint(), readint()
+a, b = b, a
+print(a + b)
+
+5) Количество множителей в разложении на простые
+fun countMul(n) begin 
+    count, i = 0, 2
+    while i^2 <= n do
+        while n mod i = 0 do
+            count = count + 1
+            n = n div i
+        end
+        i = i + 1
+    end
+    if not n = 1 then
+        count = count + 1
+    end
+    count
+end
+print(countMul(readint))
+
+6) lcm
+fun lcm(a, b) begin
+    fun gcd(a, b)
+        b if a = 0 else gcd(b mod a, a)
+    a * b div gcd(a, b)
+end
+a, b = readint, readint
+print(lcm(a, b))
+
+7) Много веток выхода из функции
+fun animal(weight, height) begin
+    if weight > 200 then
+        if height > 100 then "Giraffe"
+        elif height > 50 then "Elephant"
+        else "Hippopotamus"
+        end
+    elif weight > 50 then
+        "HumanBeing"
+    else
+        "Butterfly"
+    end
+end
+w, h = readint, readint
+puts(animal(w, h))
+
+8) Високосные года в промежутке
+proc printLeapYear(from, to) begin
+    cur = from
+    while cur <= to do
+        fun isLeap(year)
+            1 if year mod 4 = 0 and not year mod 100 = 0 or year mod 400 = 0 else 0
+        if isLeap(cur) = 1 then
+            print(cur)
+            puts("")
+        end
+        cur = cur + 1
+    end
+end
+from, to = readint, readint
+printLeapYear(from, to)
+
+9) Косинус угла между векторами
+fun len(x, y) sqrt(x^2 + y^2)
+fun s(x1, y1, x2, y2)
+    (x1 * x2 + y1 * y2) / len(x1, y1) / len(x2, y2)
+x1, y1, x2, y2 = readdouble, readdouble, readdouble, readdouble
+print(s(x1, y1, x2, y2))
+

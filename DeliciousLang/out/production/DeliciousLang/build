@@ -1,0 +1,2 @@
+java Main
+gcc main.c -lm -std=c11

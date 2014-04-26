@@ -1,0 +1,4 @@
+fun pif(a, b, c)
+    "YES" if a^2 + b^2 = c^2 else "NO"
+a, b, c = readint, readint, readint
+puts(pif(a, b, c))
